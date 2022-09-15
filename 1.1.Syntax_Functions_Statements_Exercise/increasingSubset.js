@@ -16,5 +16,3 @@ function makeIncreasing(collection) {
 }
 
 makeIncreasing([12]);
-
-// 1.
