@@ -6,13 +6,8 @@ function processOrder(order) {
   };
 
   function wheelSize(order) {
-    let result = 0;
-    if (order.wheelsize % 2 !== 0) {
-      result = order.wheelsize;
-    } else {
-      result = order.wheelsize - 1;
-    }
-
+    let result =
+      order.wheelsize % 2 !== 0 ? order.wheelsize : order.wheelsize - 1;
     return [result, result, result, result];
   }
 
