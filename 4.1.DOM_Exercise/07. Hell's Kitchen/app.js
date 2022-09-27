@@ -1,8 +1,9 @@
-function solve() {
-   document.querySelector('#btnSend').addEventListener('click', onClick);
+let restaurantsList = {};
 
-   function onClick () {
-      //   TODO:
-      
-   }
+function solve() {
+  document.querySelector("#btnSend").addEventListener("click", onClick);
+
+  function onClick() {
+    //   TODO:
+  }
 }
