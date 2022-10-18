@@ -25,7 +25,7 @@ function solution() {
 
     function manager(instruction) {
         let [command, param, qty] = instruction.split(" ");
-        commands[command](param, qty);
+        return commands[command](param, qty);
     }
 
     function restock(ingredient, qty) {
@@ -34,6 +34,17 @@ function solution() {
     }
 
     function prepare(product, qty) {
+        let recipe = Object.entries(recepices[product]);
+        qty = Number(qty);
+
+        recipe.forEach((x) => (x[1] *= qty));
+
+        for (let [ingredient, qty] of recipe) {
+            if (inStock[ingredient] < qty) {
+                return `Error: not enough ${ingredient} in stock`;
+            }
+            inStock[ingredient] -= qty;
+        }
         return "Success";
     }
 
@@ -46,7 +57,9 @@ function solution() {
 
 let manager = solution();
 
-console.log(manager("restock flavour 50 "));
-console.log(manager("prepare lemonade 4 "));
-console.log(manager("restock carbohydrate 10 "));
+console.log(manager("restock carbohydrate 10"));
+console.log(manager("restock flavour 10"));
 console.log(manager("prepare apple 1"));
+console.log(manager("restock fat 10"));
+console.log(manager("prepare burger 1"));
+console.log(manager("report"));
