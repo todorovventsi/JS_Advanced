@@ -1,5 +1,15 @@
 {
-  "dependencies": {
-    "chai": "^4.3.6"
-  }
+	"dependencies": {
+		"chai": "^4.3.6"
+	},
+	"name": "07.unit_testing_error_handling_lab",
+	"version": "1.0.0",
+	"main": "test.js",
+	"devDependencies": {},
+	"scripts": {
+		"test": "mocha"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": ""
 }
